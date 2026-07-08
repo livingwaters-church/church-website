@@ -304,3 +304,139 @@ body {
         gap: 15px;
     }
 }
+/* ==========================================================================
+   8. DONATE PAGE SPECIFIC LAYOUTS
+   ========================================================================== */
+.donate-container {
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.donate-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.donate-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    letter-spacing: -0.025em;
+}
+
+.donate-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* 3-Column Layout Grid */
+.giving-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+/* Individual Giving Cards */
+.giving-card {
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--card-shadow);
+    transition: var(--transition-smooth);
+}
+
+.giving-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-hover-shadow);
+}
+
+/* Visual border highlight for the core Benevolence / Outreach fund */
+.giving-card.highlighted {
+    border-top: 5px solid var(--accent-blue);
+    background-color: #fafafa;
+}
+
+.giving-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.giving-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* List Formatting for Outreach Items */
+.benevolence-list {
+    list-style-position: inside;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+/* Give Button styling inside the cards */
+.btn-give {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    margin-top: 15px;
+}
+
+.btn-give:hover {
+    background-color: var(--accent-blue);
+}
+
+/* Mail-In Alternative Section Banner */
+.mail-banner {
+    background-color: var(--bg-light);
+    border: 1px dashed #cbd5e1;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mail-banner h3 {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 10px;
+}
+
+.mail-banner p {
+    color: var(--text-muted);
+    font-size: 1rem;
+    max-width: 650px;
+    margin: 0 auto 25px auto;
+}
+
+/* Address Display Container Box */
+.address-box {
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: var(--radius-sm);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-main);
+    box-shadow: var(--card-shadow);
+}
