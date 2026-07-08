@@ -537,3 +537,204 @@ body {
     background-color: var(--primary-blue);
     color: var(--bg-white);
 }
+
+/* ==========================================================================
+   10. MEDIA & RESOURCES HUB LAYOUTS
+   ========================================================================== */
+.media-container {
+    max-width: var(--max-width);
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.media-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+.media-header h2 {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    letter-spacing: -0.025em;
+}
+
+.media-header p {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Two-Column Side-by-Side Flex Layout */
+.media-split-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.media-panel {
+    flex: 1;
+    background-color: var(--bg-white);
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--card-shadow);
+}
+
+/* Decorative Badges */
+.panel-badge, .panel-badge-alt {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 15px;
+}
+
+.panel-badge {
+    background-color: #e0e7ff;
+    color: var(--accent-blue);
+}
+
+.panel-badge-alt {
+    background-color: #fef3c7;
+    color: #d97706;
+}
+
+.media-panel h3 {
+    font-size: 1.6rem;
+    color: var(--primary-blue);
+    margin-bottom: 12px;
+}
+
+.media-panel p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* Audio Playlist & Widget Placeholder Boxes */
+.media-placeholder-box {
+    background-color: #f1f5f9;
+    border: 2px dashed #cbd5e1;
+    border-radius: var(--radius-sm);
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 30px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.media-placeholder-box.alt-bg {
+    background-color: #fcf6f0;
+    border-color: #eddcd2;
+}
+
+.icon-placeholder {
+    font-size: 2rem;
+}
+
+/* Button CTA Rules for Media Panels */
+.btn-media-action {
+    display: block;
+    text-align: center;
+    background-color: var(--primary-blue);
+    color: var(--bg-white);
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    margin-top: auto;
+}
+
+.btn-media-action:hover {
+    background-color: var(--accent-blue);
+}
+
+/* Full-Width Bible Reading Plan Banner Component */
+.reading-plan-banner {
+    background: linear-gradient(135deg, #1e3a8a, #0f172a);
+    color: var(--bg-white);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+.reading-plan-content {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    max-width: 700px;
+}
+
+.plan-icon {
+    font-size: 3rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 10px 18px;
+    border-radius: var(--radius-sm);
+}
+
+.reading-plan-content h3 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    letter-spacing: -0.01em;
+}
+
+.reading-plan-content p {
+    color: #cbd5e1;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.btn-plan-download {
+    display: inline-block;
+    background-color: var(--bg-white);
+    color: var(--primary-blue);
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: var(--transition-smooth);
+}
+
+.btn-plan-download:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+/* Media Specific Responsive Rules */
+@media (max-width: 900px) {
+    .media-split-row {
+        flex-direction: column;
+    }
+    
+    .reading-plan-banner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .btn-plan-download {
+        width: 100%;
+        text-align: center;
+    }
+}
