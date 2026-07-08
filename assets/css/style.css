@@ -884,6 +884,9 @@ body {
    ========================================================================== */
 
 /* 1. Infinite Text Ticker Styles */
+/* ==========================================================================
+   11. ANNOUNCEMENT SYSTEM UTILITIES (INFINITE NO-GAP LOOPS)
+   ========================================================================== */
 .ticker-wrap {
     width: 100%;
     background-color: #0f172a; /* Clean solid dark charcoal base */
@@ -896,7 +899,7 @@ body {
 .ticker-content {
     display: flex;
     white-space: nowrap;
-    animation: marquee Continuous 35s linear infinite;
+    animation: marqueeContinuous 35s linear infinite; /* Fixed naming mismatch space */
 }
 
 .ticker-item {
@@ -917,6 +920,7 @@ body {
     0% { transform: translateX(0%); }
     100% { transform: translateX(-50%); }
 }
+
 /* 2. Graphical Slideshow Carousel Styles */
 .slideshow-viewport {
     width: 100%;
