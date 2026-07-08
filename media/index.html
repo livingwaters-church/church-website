@@ -26,38 +26,82 @@
         </nav>
     </header>
 
-    <main class="media-container">
+    <!-- SYSTEM ANNOUNCEMENT TICKER (TOP LINE ALERTS) -->
+    <div class="ticker-wrap">
+        <div class="ticker-content">
+            <div class="ticker-item">🚨 <strong>Ron Brown Summer Lunch Program:</strong> Mon-Fri 11:30AM - 12:30PM at Oak Grove Community Center!</div>
+            <div class="ticker-item">🎒 <strong>2026 Backpack Giveaway:</strong> Friday, August 7th at 11:30 AM in memory of Helen J. Stanfill!</div>
+            <div class="ticker-item">📦 <strong>Food Pantry:</strong> Elisha's Closet distribution coming up on the 3rd Friday!</div>
+            <div class="ticker-item">🍎 <strong>Feeding America:</strong> Regional mass food distribution hits the 2nd Tuesday of the month!</div>
+            <div class="ticker-item">📱 <strong>RightNow Media:</strong> Free access to 25,000+ Bible study videos! Text LWKY to 49775 to join.</div>
+        </div>
+    </div>
+
+    <main class="media-container" style="padding-top: 20px;">
         <!-- Section Header -->
         <div class="media-header">
             <h2>Media & Resources</h2>
-            <p>Access recent audio messages, explore digital study tools, and stay engaged with God's Word throughout the week.</p>
+            <p>Access recent messages, explore digital study tools, and stay engaged with God's Word throughout the week.</p>
         </div>
 
-        <!-- TWO COLUMN ROW: Sermons + RightNow Media Banner -->
+        <!-- PASTOR WELCOME ACTION ROW -->
+        <div style="background: #1e3a8a; color: #ffffff; border-radius: 8px; padding: 30px; display: flex; flex-wrap: wrap; align-items: center; gap: 30px; margin-bottom: 40px;">
+            <div style="flex: 1; min-width: 260px; text-align: center; cursor: pointer;">
+                <div style="background: #27272a; padding: 20px; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto 15px auto; display: flex; align-items: center; justify-content: center; border: 4px solid #ffffff; box-shadow: 0 4px 6px rgba(0,0,0,0.15);">
+                    <span style="font-size: 2.5rem; color: #38bdf8; padding-left: 5px;">▶</span>
+                </div>
+                <p style="font-size: 0.8rem; color: #93c5fd; font-family: monospace; letter-spacing: 1px;">285 HUGH HUNTER ROAD</p>
+            </div>
+            <div style="flex: 2; min-width: 300px;">
+                <h4 style="margin-top: 0; text-transform: uppercase; color: #38bdf8; font-size: 0.85rem; letter-spacing: 1px;">Welcome Home</h4>
+                <h2 style="margin: 5px 0 15px 0; font-size: 1.75rem;">A Message from our Leadership</h2>
+                <p style="font-size: 1rem; line-height: 1.6; color: #bfdbfe; margin-bottom: 0;">Click the graphic presentation window to hear an official welcome to Oak Grove straight from <strong>Pastor Vance C. Evans Sr.</strong></p>
+            </div>
+        </div>
+
+        <!-- TWO COLUMN ROW: YouTube Sermon Stream + RightNow Media Banner -->
         <div class="media-split-row">
             
-            <!-- Left Column: Audio Sermons Panel -->
-            <div class="media-panel sermons-panel">
-                <span class="panel-badge">Audio Archives</span>
-                <h3>Recent Messages</h3>
-                <p>Missed a Sunday or want to re-listen to a message? Browse our central sermon audio archive to streaming messages anytime, anywhere.</p>
-                <div class="media-placeholder-box">
-                    <span class="icon-placeholder">🔊</span>
-                    <p>Sermon Audio Player Playlist Container</p>
+            <!-- Left Column: Video Sermons Panel (YouTube Sync) -->
+            <div class="media-panel sermons-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span class="panel-badge">YouTube Sync</span>
+                    <h3>Recent Video Messages</h3>
+                    <p>Stream our latest live worship gatherings and series directly from our digital collection.</p>
+                    
+                    <!-- Sermon Layout Container matching the "Obedience in Motion" message -->
+                    <div style="position: relative; background: #000; padding-top: 56.25%; border-radius: 6px; overflow: hidden; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('../assets/images/sermon-obedience.jpg') no-repeat center center/cover; display: flex; align-items: center; justify-content: center;">
+                            <div style="background: rgba(37, 99, 235, 0.9); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; cursor: pointer;">▶</div>
+                        </div>
+                    </div>
+                    
+                    <h4 style="margin: 0 0 5px 0; color: var(--primary-blue); font-size: 1.2rem;">Obedience in Motion</h4>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">James 1:21-25 • Sunday Morning Stream</p>
                 </div>
-                <a href="#SERMON_HOST_LINK" class="btn-media-action">Browse Sermon Archives</a>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 15px; margin-top: 15px;">
+                    <span style="font-size: 0.85rem; color: #94a3b8;">📅 Jul 05, 2026</span>
+                    <a href="https://www.youtube.com" target="_blank" class="btn-media-action" style="margin: 0;">Watch on YouTube</a>
+                </div>
             </div>
 
             <!-- Right Column: RightNow Media Partnership -->
-            <div class="media-panel rightnow-panel">
-                <span class="panel-badge-alt">Free Resource</span>
-                <h3>RightNow Media</h3>
-                <p>Think of it as the "Netflix of video Bible studies." Our church community has free, instant access to over 20,000 discipleship videos, kids shows, and small group series.</p>
-                <div class="media-placeholder-box alt-bg">
-                    <span class="icon-placeholder">🎬</span>
-                    <p>Custom Invitation / Registration Widget Area</p>
+            <div class="media-panel rightnow-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <span class="panel-badge-alt">Community Gift</span>
+                    <h3>RightNow Media</h3>
+                    <p>Our church provides completely free, instant access to over 25,000 discipleship videos, custom Bible study modules, kids shows, and leadership tools.</p>
+                    
+                    <div class="media-placeholder-box alt-bg" style="text-align: center; padding: 30px 20px; margin: 20px 0;">
+                        <span style="font-weight: 800; font-size: 1.5rem; color: #000; display: block; margin-bottom: 5px;">rightnow <span style="color: #ef4444;">MEDIA</span></span>
+                        <div style="background: #f1f5f9; padding: 10px; border-radius: 6px; font-size: 0.85rem; color: #334155; font-weight: 600; display: inline-block; margin-top: 10px; border: 1px solid #e2e8f0;">
+                            📲 Text <strong style="color: #ef4444;">LWKY</strong> to <strong>49775</strong>
+                        </div>
+                    </div>
                 </div>
-                <a href="#RIGHTNOW_MEDIA_LINK" class="btn-media-action">Access Your Free Account</a>
+                
+                <a href="https://www.rightnowmedia.org" target="_blank" class="btn-media-action" style="background: #0f172a;">Activate Free Account &rarr;</a>
             </div>
 
         </div>
