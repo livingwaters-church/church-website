@@ -886,35 +886,36 @@ body {
 /* 1. Infinite Text Ticker Styles */
 .ticker-wrap {
     width: 100%;
-    background-color: var(--primary-blue, #0f172a);
-    color: #ffffff;
-    padding: 12px 0;
+    background-color: #0f172a; /* Clean solid dark charcoal base */
+    padding: 14px 0;
     overflow: hidden;
     box-shadow: inset 0 -2px 4px rgba(0,0,0,0.15);
+    display: flex;
 }
 
 .ticker-content {
-    display: inline-block;
+    display: flex;
     white-space: nowrap;
-    padding-left: 100%;
-    animation: marquee 40s linear infinite;
+    animation: marquee Continuous 35s linear infinite;
 }
 
 .ticker-item {
     display: inline-block;
-    padding: 0 2.5rem;
-    font-size: 0.9rem;
+    padding: 0 2rem;
+    font-size: 0.95rem;
     font-weight: 500;
+    color: #f8fafc; /* Crisp, readable off-white text */
     letter-spacing: 0.025em;
 }
 
 .ticker-item strong {
-    color: var(--accent-blue, #38bdf8);
+    color: #38bdf8; /* Highly visible light blue for emphasis */
 }
 
-@keyframes marquee {
-    0% { transform: translate3d(0, 0, 0); }
-    100% { transform: translate3d(-100%, 0, 0); }
+/* Perfect, seamless no-gap loop animation */
+@keyframes marqueeContinuous {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
 }
 /* 2. Graphical Slideshow Carousel Styles */
 .slideshow-viewport {
