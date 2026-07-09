@@ -26,17 +26,11 @@
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Card Category Modifiers */
-.event-men { border-top: 5px solid var(--color-men); }
-.event-women { border-top: 5px solid var(--color-women); }
-.event-outreach { border-top: 5px solid var(--color-outreach); }
-.event-admin { border-top: 5px solid var(--color-admin); }
-
-/* Optional: Subtle background tints to differentiate cards */
-.event-men { background-color: #eff6ff; }
-.event-women { background-color: #fdf2f8; }
-.event-outreach { background-color: #ecfdf5; }
-.event-admin { background-color: #f8fafc; }
+/* Combined Category Modifiers */
+.event-men { border-top: 5px solid var(--color-men); background-color: #eff6ff; }
+.event-women { border-top: 5px solid var(--color-women); background-color: #fdf2f8; }
+.event-outreach { border-top: 5px solid var(--color-outreach); background-color: #ecfdf5; }
+.event-admin { border-top: 5px solid var(--color-admin); background-color: #f8fafc; }
 
 * {
     margin: 0;
