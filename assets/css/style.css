@@ -850,8 +850,8 @@ body {
     align-items: center;
 }
 
-/* Image Styling (Targeting the photo inside the profile card) */
-.staff-photo {
+/* Image Styling - Nested within the card context */
+.staff-profile-card .staff-photo {
     width: 150px !important;
     height: 150px !important;
     min-width: 150px !important;
