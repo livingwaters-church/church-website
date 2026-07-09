@@ -10,6 +10,13 @@
     --bg-light: #f8fafc;          /* Off-white background for grid sections */
     --bg-white: #ffffff;          /* Pure white for card components */
     
+    /* Ministry Color Coding */
+    --color-men: #1e3a8a;      /* Deep Blue (matches primary-blue) */
+    --color-women: #ec4899;    /* Vibrant Pink */
+    --color-outreach: #059669; /* Emerald Green */
+    --color-admin: #64748b;    /* Slate Gray */
+}
+    
     /* Layout & Utility Variables */
     --max-width: 1200px;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -18,6 +25,18 @@
     --radius-lg: 12px;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* Card Category Modifiers */
+.event-men { border-top: 5px solid var(--color-men); }
+.event-women { border-top: 5px solid var(--color-women); }
+.event-outreach { border-top: 5px solid var(--color-outreach); }
+.event-admin { border-top: 5px solid var(--color-admin); }
+
+/* Optional: Subtle background tints to differentiate cards */
+.event-men { background-color: #eff6ff; }
+.event-women { background-color: #fdf2f8; }
+.event-outreach { background-color: #ecfdf5; }
+.event-admin { background-color: #f8fafc; }
 
 * {
     margin: 0;
