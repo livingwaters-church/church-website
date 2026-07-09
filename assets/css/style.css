@@ -15,7 +15,7 @@
     --color-women: #ec4899;    /* Vibrant Pink */
     --color-outreach: #059669; /* Emerald Green */
     --color-admin: #64748b;    /* Slate Gray */
-}
+
     
     /* Layout & Utility Variables */
     --max-width: 1200px;
@@ -25,12 +25,11 @@
     --radius-lg: 12px;
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
-
-/* Combined Category Modifiers */
-.event-men { border-top: 5px solid var(--color-men); background-color: #eff6ff; }
-.event-women { border-top: 5px solid var(--color-women); background-color: #fdf2f8; }
-.event-outreach { border-top: 5px solid var(--color-outreach); background-color: #ecfdf5; }
-.event-admin { border-top: 5px solid var(--color-admin); background-color: #f8fafc; }
+    /* Combined Category Modifiers */
+   .event-men { border-top: 5px solid var(--color-men) !important; background-color: #eff6ff !important; }
+   .event-women { border-top: 5px solid var(--color-women) !important; background-color: #fdf2f8 !important; }
+   .event-outreach { border-top: 5px solid var(--color-outreach) !important; background-color: #ecfdf5 !important; }
+   .event-admin { border-top: 5px solid var(--color-admin) !important; background-color: #f8fafc !important; }
 
 * {
     margin: 0;
