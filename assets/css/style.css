@@ -828,15 +828,16 @@ body {
     line-height: 1.6;
 }
 
-/* Updated Staff Grid Styling */
+/* Staff Grid Container */
 .staff-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
-    max-width: 900px; /* Adjusted slightly to accommodate card layout */
+    max-width: 900px;
     margin: 0 auto;
 }
 
+/* Individual Profile Card */
 .staff-profile-card {
     background-color: var(--bg-white);
     border: 1px solid #e2e8f0;
@@ -849,46 +850,43 @@ body {
     align-items: center;
 }
 
-/* New Image Styling */
-.leadership-section {
-  padding: 40px 20px;
-  text-align: center;
+/* Image Styling (Targeting the photo inside the profile card) */
+.staff-photo {
+    width: 150px !important;
+    height: 150px !important;
+    min-width: 150px !important;
+    min-height: 150px !important;
+    max-width: 150px !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+    border-radius: 50% !important;
+    margin-bottom: 20px !important;
+    border: 3px solid var(--bg-light) !important;
+    display: block !important;
 }
 
-.staff-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
-  margin-top: 30px;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
+/* Text and Role Styling */
+.staff-profile-card h4 {
+    color: var(--primary-blue);
+    font-size: 1.3rem;
+    margin-bottom: 4px;
 }
 
-.staff-card {
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  background: #ffffff;
+.staff-role {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    letter-spacing: 0.05em;
+    margin-bottom: 15px;
 }
 
-.staff-card img {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 15px;
+.staff-profile-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
 }
-
-.staff-card h3 {
-  margin: 10px 0 5px;
-}
-
-.staff-card .role {
-  color: #666;
-  font-size: 0.9em;
-}
-
 /* ==========================================================================
    ANNOUNCEMENT TICKER & GRAPHICAL SLIDESHOW LOOPS
    ========================================================================== */
