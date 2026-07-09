@@ -882,11 +882,7 @@ body {
     margin-bottom: 15px;
 }
 
-.staff-profile-card p {
-    color: var(--text-muted);
-    font-size: 0.9rem;
-    line-height: 1.6;
-}
+
 /* ==========================================================================
    ANNOUNCEMENT TICKER & GRAPHICAL SLIDESHOW LOOPS
    ========================================================================== */
