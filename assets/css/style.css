@@ -922,7 +922,7 @@ html {
 .ticker-content {
     display: flex;
     white-space: nowrap;
-    animation: marqueeContinuous 45s linear infinite; /* Fixed naming mismatch space */
+    animation: marqueeContinuous 55s linear infinite; /* Fixed naming mismatch space */
 }
 
 .ticker-item {
