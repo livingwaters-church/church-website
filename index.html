@@ -233,15 +233,14 @@
             const memberList = document.getElementById('member-list');
             data.forEach(member => {
                 const card = document.createElement('div');
-                card.style.border = "1px solid #e2e8f0";
-                card.style.padding = "15px";
-                card.style.borderRadius = "8px";
-                card.innerHTML = `
-                    <h3>${member.first_name} ${member.last_name}</h3>
-                    <p>Status: <strong>${member.status}</strong></p>
-                    <p>City: ${member.mailing_city}</p>
-                `;
-                memberList.appendChild(card);
+               card.className = "ministry-card"; // This links to your existing CSS file
+               card.style.padding = "20px";
+               card.style.textAlign = "center";
+               card.innerHTML = `
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.first_name} ${member.last_name}</h3>
+                    <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.mailing_city}</p>
+               `;
+                                memberList.appendChild(card);
             });
         })
         .catch(err => console.error('Error fetching members:', err));
