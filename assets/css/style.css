@@ -571,6 +571,26 @@ html {
     flex: 0 0 auto;             /* Keeps cards from stretching */
 }
 
+/* Add these right before the comment for Section 10 */
+
+/* Centering and styling the directory header */
+#member-directory {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+#member-directory h2 {
+    color: var(--primary-blue);
+    margin-bottom: 5px;
+}
+
+/* Optional: Add this if you want the subtitle to look distinct */
+.directory-subtitle {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
 /* ==========================================================================
    10. MEDIA & RESOURCES HUB LAYOUTS
    ========================================================================== */
