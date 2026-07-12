@@ -228,7 +228,7 @@
         </div>
     </footer>
     
-    <script>
+   <script>
     document.addEventListener('DOMContentLoaded', () => {
         fetch('http://localhost:3000/api/members')
             .then(response => response.json())
@@ -240,9 +240,26 @@
 
                 data.forEach(member => {
                     const card = document.createElement('div');
-                    card.className = "ministry-card";
+                    
+                    // Determine color class based on last name first letter
+                    // Last names A-H get blue, I-P get pink, Q-Z get green
+                    const firstLetter = member.last_name ? member.last_name.charAt(0).toUpperCase() : 'A';
+                    let colorClass = "event-admin"; // Default gray
+                    
+                    if (firstLetter <= 'H') {
+                        colorClass = "event-men";      // A-H: Blue
+                    } else if (firstLetter <= 'P') {
+                        colorClass = "event-women";    // I-P: Pink
+                    } else {
+                        colorClass = "event-outreach"; // Q-Z: Green
+                    }
+
+                    // Assign the base card class and the dynamic color class
+                    card.className = `ministry-card ${colorClass}`;
                     card.style.padding = "20px";
                     card.style.textAlign = "center";
+                    
+                    // Set the content
                     card.innerHTML = `
                         <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.first_name} ${member.last_name}</h3>
                         <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.mailing_city}</p>
