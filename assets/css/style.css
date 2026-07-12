@@ -557,6 +557,20 @@ html {
     color: var(--bg-white);
 }
 
+.rolodex-container {
+    display: flex;              /* Put everything in one row */
+    overflow-x: auto;           /* Allow horizontal scrolling */
+    gap: 20px;                  /* Space between cards */
+    padding-bottom: 20px;       /* Adds space for the scrollbar */
+    scroll-behavior: smooth;    /* Makes scrolling feel nice */
+}
+
+/* Optional: Make the cards look good in a horizontal list */
+.rolodex-container .ministry-card {
+    min-width: 250px;           /* Prevents cards from squishing */
+    flex: 0 0 auto;             /* Keeps cards from stretching */
+}
+
 /* ==========================================================================
    10. MEDIA & RESOURCES HUB LAYOUTS
    ========================================================================== */
