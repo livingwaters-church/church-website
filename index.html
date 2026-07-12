@@ -227,23 +227,29 @@
     </footer>
     
     <script>
-    fetch('http://localhost:3000/api/members')
-        .then(response => response.json())
-        .then(data => {
-            const memberList = document.getElementById('member-list');
-            data.forEach(member => {
-                const card = document.createElement('div');
-               card.className = "ministry-card"; // This links to your existing CSS file
-               card.style.padding = "20px";
-               card.style.textAlign = "center";
-               card.innerHTML = `
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.first_name} ${member.last_name}</h3>
-                    <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.mailing_city}</p>
-               `;
-                                memberList.appendChild(card);
-            });
-        })
-        .catch(err => console.error('Error fetching members:', err));
+    document.addEventListener('DOMContentLoaded', () => {
+        fetch('http://localhost:3000/api/members')
+            .then(response => response.json())
+            .then(data => {
+                const memberList = document.getElementById('member-list');
+                
+                // Safety check
+                if (!memberList) return; 
+
+                data.forEach(member => {
+                    const card = document.createElement('div');
+                    card.className = "ministry-card";
+                    card.style.padding = "20px";
+                    card.style.textAlign = "center";
+                    card.innerHTML = `
+                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.first_name} ${member.last_name}</h3>
+                        <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.mailing_city}</p>
+                    `;
+                    memberList.appendChild(card);
+                });
+            })
+            .catch(err => console.error('Error fetching members:', err));
+    });
 </script>
 
 </body>
