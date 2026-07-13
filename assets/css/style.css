@@ -956,7 +956,7 @@ html {
 .ticker-content {
     display: flex;
     white-space: nowrap;
-    animation: marqueeContinuous 55s linear infinite; /* Fixed naming mismatch space */
+    animation: marqueeContinuous 65s linear infinite; /* Fixed naming mismatch space */
 }
 
 .ticker-item {
