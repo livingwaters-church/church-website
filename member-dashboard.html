@@ -1,17 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Profile | LWCC</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .dashboard-card { max-width: 500px; margin: 50px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .dashboard-card input { display: block; width: 100%; margin: 10px 0 20px 0; padding: 10px; border: 1px solid #ddd; border-radius: 6px; }
+        .highlight { background-color: #fef08a !important; border: 2px solid #eab308 !important; }
+    </style>
+</head>
+<body>
+
 <div class="dashboard-card">
-    <h2>My Church Profile</h2>
+    <h2>Update My Profile</h2>
     <form id="profile-form">
         <label>Full Name</label>
-        <input type="text" name="name" value="Dean Thomas" disabled>
+        <input type="text" id="name" disabled>
 
         <label>Phone Number</label>
-        <input type="tel" name="phone" value="" placeholder="Enter phone..." 
-               style="background-color: #fef08a; border: 2px solid #eab308;">
+        <input type="tel" id="phone" class="highlight" placeholder="Update phone...">
 
         <label>Email Address</label>
-        <input type="email" name="email" value="" placeholder="Enter email..." 
-               style="background-color: #fef08a; border: 2px solid #eab308;">
+        <input type="email" id="email" class="highlight" placeholder="Update email...">
 
-        <button type="submit" class="btn-update">Update My Info</button>
+        <button type="submit" style="background:#38bdf8; padding:10px 20px; border:none; border-radius:6px; cursor:pointer;">Save Changes</button>
     </form>
 </div>
+
+<script>
+    const userId = localStorage.getItem('userId'); // Assuming we store this on login
+
+    // 1. Fetch current data
+    fetch(`http://localhost:3000/api/members/${userId}`)
+        .then(res => res.json())
+        .then(member => {
+            document.getElementById('name').value = member.name;
+            document.getElementById('phone').value = member.phone || '';
+            document.getElementById('email').value = member.email || '';
+        });
+
+    // 2. Submit Updates
+    document.getElementById('profile-form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        fetch('http://localhost:3000/api/update-profile', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                id: userId,
+                name: document.getElementById('name').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value
+            })
+        }).then(() => alert('Profile Updated Successfully!'));
+    });
+</script>
+
+</body>
+</html>
