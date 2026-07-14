@@ -436,6 +436,29 @@ html {
     background-color: #5a6268;
 }
 
+.nav-btn {
+    padding: 10px 15px;      /* Consistent padding */
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-block;
+    transition: opacity 0.2s; /* Nice hover effect */
+}
+
+.btn-nav-give {
+    background: #1e3a8a; /* Your 'Give' color */
+    color: white;
+}
+
+.btn-nav-sign-in {
+    background: #38bdf8; /* Your 'Sign In' color */
+    color: #0f172a;
+}
+
+.nav-btn:hover {
+    opacity: 0.9; /* Makes them feel interactive */
+}
+
 /* Mail-In Alternative Section Banner */
 .mail-banner {
     background-color: var(--bg-light);
