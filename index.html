@@ -23,6 +23,7 @@
                 <li><a href="media/index.html">Media</a></li>
                  <li><a href="rightnow/index.html">RightNow</a></li>
                 <li><a href="donate/index.html" class="btn-nav-give">Give</a></li>
+                <li><a href="login.html" style="background: #38bdf8; color: #0f172a; padding: 10px 15px; border-radius: 6px; text-decoration: none; font-weight: 700;">Sign In</a></li>
             </ul>
         </nav>
     </header>
@@ -230,47 +231,49 @@
     
    <script>
     document.addEventListener('DOMContentLoaded', () => {
-        fetch('http://localhost:3000/api/members')
-            .then(response => response.json())
-            .then(data => {
-                const memberList = document.getElementById('member-list');
-                
-                // Safety check
-                if (!memberList) return; 
+        const memberList = document.getElementById('member-list');
+        if (!memberList) return;
 
-                data.forEach(member => {
-                const card = document.createElement('div');
-                
-                // 1. Get the last name from the full "name" string for color logic
-                const nameParts = member.name.split(' ');
-                const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : member.name;
-                const firstLetter = lastName.charAt(0).toUpperCase();
-                
-                let colorClass = "event-admin"; 
-                
-                if (firstLetter <= 'H') {
-                    colorClass = "event-men";     // A-H: Blue
-                } else if (firstLetter <= 'P') {
-                    colorClass = "event-women";   // I-P: Pink
-                } else {
-                    colorClass = "event-outreach"; // Q-Z: Green
-                }
-            
-                card.className = `ministry-card ${colorClass}`;
-                card.style.padding = "20px";
-                card.style.textAlign = "center";
-                
-                // 2. Use the correct keys from your JSON (member.name, member.status, member.city)
-                card.innerHTML = `
-                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.name}</h3>
-                    <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.city}</p>
-                `;
-                memberList.appendChild(card);
-            });
-            })
-            .catch(err => console.error('Error fetching members:', err));
+        // 1. CHECK THE GATE: Is the user logged in?
+        const isLoggedIn = localStorage.getItem('isLoggedIn'); // This will be set by login.html later
+
+        if (isLoggedIn === 'true') {
+            // 2. ONLY FETCH IF AUTHORIZED
+            fetch('http://localhost:3000/api/members')
+                .then(response => response.json())
+                .then(data => {
+                    data.forEach(member => {
+                        // --- YOUR EXISTING LOGIC STAYS HERE ---
+                        const card = document.createElement('div');
+                        const nameParts = member.name.split(' ');
+                        const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : member.name;
+                        const firstLetter = lastName.charAt(0).toUpperCase();
+                        
+                        let colorClass = (firstLetter <= 'H') ? "event-men" : (firstLetter <= 'P') ? "event-women" : "event-outreach";
+                        
+                        card.className = `ministry-card ${colorClass}`;
+                        card.style.padding = "20px";
+                        card.style.textAlign = "center";
+                        
+                        card.innerHTML = `
+                            <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.name}</h3>
+                            <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.city}</p>
+                        `;
+                        memberList.appendChild(card);
+                    });
+                })
+                .catch(err => console.error('Error fetching members:', err));
+        } else {
+            // 3. IF NOT LOGGED IN: Show the gate (the login button)
+            memberList.innerHTML = `
+                <div style="padding: 40px; background: #f8fafc; border: 2px dashed #cbd5e1; border-radius: 12px;">
+                    <h3>Members Only</h3>
+                    <p>This directory is private. Please sign in to view your church family.</p>
+                    <a href="login.html" class="signin-btn" style="display:inline-block; margin-top:10px;">Sign In</a>
+                </div>
+            `;
+        }
     });
 </script>
-
 </body>
 </html>
