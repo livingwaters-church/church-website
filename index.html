@@ -239,33 +239,34 @@
                 if (!memberList) return; 
 
                 data.forEach(member => {
-                    const card = document.createElement('div');
-                    
-                    // Determine color class based on last name first letter
-                    // Last names A-H get blue, I-P get pink, Q-Z get green
-                    const firstLetter = member.last_name ? member.last_name.charAt(0).toUpperCase() : 'A';
-                    let colorClass = "event-admin"; // Default gray
-                    
-                    if (firstLetter <= 'H') {
-                        colorClass = "event-men";      // A-H: Blue
-                    } else if (firstLetter <= 'P') {
-                        colorClass = "event-women";    // I-P: Pink
-                    } else {
-                        colorClass = "event-outreach"; // Q-Z: Green
-                    }
-
-                    // Assign the base card class and the dynamic color class
-                    card.className = `ministry-card ${colorClass}`;
-                    card.style.padding = "20px";
-                    card.style.textAlign = "center";
-                    
-                    // Set the content
-                    card.innerHTML = `
-                        <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.first_name} ${member.last_name}</h3>
-                        <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.mailing_city}</p>
-                    `;
-                    memberList.appendChild(card);
-                });
+                const card = document.createElement('div');
+                
+                // 1. Get the last name from the full "name" string for color logic
+                const nameParts = member.name.split(' ');
+                const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : member.name;
+                const firstLetter = lastName.charAt(0).toUpperCase();
+                
+                let colorClass = "event-admin"; 
+                
+                if (firstLetter <= 'H') {
+                    colorClass = "event-men";     // A-H: Blue
+                } else if (firstLetter <= 'P') {
+                    colorClass = "event-women";   // I-P: Pink
+                } else {
+                    colorClass = "event-outreach"; // Q-Z: Green
+                }
+            
+                card.className = `ministry-card ${colorClass}`;
+                card.style.padding = "20px";
+                card.style.textAlign = "center";
+                
+                // 2. Use the correct keys from your JSON (member.name, member.status, member.city)
+                card.innerHTML = `
+                    <h3 style="font-size: 1.1rem; margin-bottom: 10px;">${member.name}</h3>
+                    <p style="font-size: 0.9rem;">Status: <strong>${member.status}</strong><br>City: ${member.city}</p>
+                `;
+                memberList.appendChild(card);
+            });
             })
             .catch(err => console.error('Error fetching members:', err));
     });
