@@ -423,6 +423,19 @@ html {
     background-color: var(--accent-blue);
 }
 
+.guest-btn {
+    display: inline-block;
+    background-color: #6c757d; /* Muted gray color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.guest-btn:hover {
+    background-color: #5a6268;
+}
+
 /* Mail-In Alternative Section Banner */
 .mail-banner {
     background-color: var(--bg-light);
