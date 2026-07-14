@@ -445,6 +445,11 @@ html {
     transition: opacity 0.2s; /* Nice hover effect */
 }
 
+.btn-nav-guest {
+    background: #e2e8f0;
+    color: #475569;
+}
+
 .btn-nav-give {
     background: #1e3a8a; /* Your 'Give' color */
     color: white;
