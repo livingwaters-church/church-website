@@ -4,23 +4,41 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="assets/css/style.css">
     <style>
-        body { background-color: #f1f5f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .login-card { background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); width: 100%; max-width: 400px; }
-        .login-card h2 { margin-bottom: 20px; color: #0f172a; text-align: center; }
-        .login-card input { width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #e2e8f0; border-radius: 6px; box-sizing: border-box; }
-        .login-card button { width: 100%; padding: 12px; background: #38bdf8; border: none; border-radius: 6px; color: #0f172a; font-weight: 700; cursor: pointer; }
-        .guest-link { display: block; text-align: center; margin-top: 20px; color: #64748b; text-decoration: none; font-size: 0.9rem; }
+        .login-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px; }
+        .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); border-top: 5px solid #38bdf8; }
+        .card h3 { color: #0f172a; margin-top: 0; }
+        .btn-action { display: block; width: 100%; padding: 12px; margin-top: 15px; text-align: center; border-radius: 6px; text-decoration: none; font-weight: 700; }
     </style>
 </head>
 <body>
-    <div class="login-card">
-        <h2>Member Sign In</h2>
+
+<div class="login-grid">
+    <!-- Card 1: Returning Members -->
+    <div class="card">
+        <h3>Returning Members</h3>
+        <p>Welcome back! Sign in to access the community directory and update your information.</p>
         <form action="/login" method="POST">
-            <input type="text" name="name" placeholder="Full Name" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Log In</button>
+            <input type="text" name="name" placeholder="Full Name" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <input type="password" name="password" placeholder="Password" required style="width:100%; padding:10px; margin-bottom:10px;">
+            <button type="submit" class="btn-action" style="background:#0f172a; color:#fff; border:none;">Sign In</button>
         </form>
-        <a href="index.html" class="guest-link">&larr; Back to Home</a>
     </div>
+
+    <!-- Card 2: First-Time Members -->
+    <div class="card" style="border-top-color: #f59e0b;">
+        <h3>First Time Here?</h3>
+        <p>If you're a member but haven't set up your account yet, click below to verify your details and secure your access.</p>
+        <a href="setup.html" class="btn-action" style="background:#fef08a; color:#0f172a; border: 2px solid #f59e0b;">Activate My Account</a>
+    </div>
+
+    <!-- Card 3: Guests -->
+    <div class="card" style="border-top-color: #94a3b8;">
+        <h3>Welcome, Guest!</h3>
+        <p>We are glad you're here. You can browse the site freely, or sign our guestbook to let us know you visited.</p>
+        <a href="index.html" class="btn-action" style="background:#f1f5f9; color:#475569;">Continue as Guest</a>
+        <a href="guestbook.html" class="btn-action" style="background:#e2e8f0; color:#475569; margin-top:10px;">Sign Guestbook (Optional)</a>
+    </div>
+</div>
+
 </body>
 </html>
