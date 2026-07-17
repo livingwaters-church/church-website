@@ -1,17 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Using '../' tells the browser to go up one level from /assets/ 
-    // to your root folder where header.html and footer.html are located.
-    fetch('../header.html')
-        .then(res => res.text())
+    // The leading slash "/" means "Start at the root folder"
+    fetch('/header.html')
+        .then(res => {
+            if (!res.ok) throw new Error('Header not found');
+            return res.text();
+        })
         .then(data => {
             document.getElementById('header-placeholder').innerHTML = data;
         })
-        .catch(err => console.error('Header fetch error:', err));
+        .catch(err => console.error('Error:', err));
 
-    fetch('../footer.html')
-        .then(res => res.text())
+    fetch('/footer.html')
+        .then(res => {
+            if (!res.ok) throw new Error('Footer not found');
+            return res.text();
+        })
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
         })
-        .catch(err => console.error('Footer fetch error:', err));
+        .catch(err => console.error('Error:', err));
 });
