@@ -40,20 +40,29 @@
             document.getElementById('email').value = member.email || '';
         });
 
-    // 2. Submit Updates
-    document.getElementById('profile-form').addEventListener('submit', (e) => {
-        e.preventDefault();
-        fetch('http://localhost:3000/api/update-profile', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                id: userId,
-                name: document.getElementById('name').value,
-                phone: document.getElementById('phone').value,
-                email: document.getElementById('email').value
-            })
-        }).then(() => alert('Profile Updated Successfully!'));
+  // Updated Submission Logic
+document.getElementById('profile-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    fetch('http://localhost:3000/api/update-profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            id: userId,
+            name: document.getElementById('name').value,
+            phone: document.getElementById('phone').value,
+            email: document.getElementById('email').value
+        })
+    })
+    .then(res => {
+        if (!res.ok) throw new Error('Update failed');
+        return res.json();
+    })
+    .then(() => alert('Profile Updated Successfully!'))
+    .catch(err => {
+        console.error(err);
+        alert('Something went wrong. Please try again.');
     });
+});
 </script>
 
 </body>

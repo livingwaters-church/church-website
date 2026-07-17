@@ -1,20 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // The base path for your GitHub Pages project
-    const basePath = '/church-website';
+    // Inject Header
+    fetch('/header.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('header-placeholder').innerHTML = data;
+        });
 
-    const loadComponent = (id, file) => {
-        // This constructs the URL as /church-website/header.html
-        fetch(`${basePath}/${file}`)
-            .then(res => {
-                if (!res.ok) throw new Error(`${file} failed: ${res.status}`);
-                return res.text();
-            })
-            .then(data => {
-                document.getElementById(id).innerHTML = data;
-            })
-            .catch(err => console.error('Injection error:', err));
-    };
-
-    loadComponent('header-placeholder', 'header.html');
-    loadComponent('footer-placeholder', 'footer.html');
+    // Inject Footer
+    fetch('/footer.html')
+        .then(res => res.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
+        });
 });
