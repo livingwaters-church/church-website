@@ -1,10 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Determine the root path dynamically
-    const rootPath = window.location.origin;
+    // Define the base path for your GitHub Pages project
+    const basePath = '/church-website'; 
 
-    // Use absolute paths
     const loadComponent = (id, file) => {
-        fetch(`${rootPath}/${file}`)
+        // Build the path to include the project folder name
+        fetch(`${basePath}/${file}`)
             .then(res => {
                 if (!res.ok) throw new Error(`${file} failed: ${res.status}`);
                 return res.text();
