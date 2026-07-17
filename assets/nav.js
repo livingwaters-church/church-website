@@ -1,22 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // The leading slash "/" means "Start at the root folder"
-    fetch('/header.html')
-        .then(res => {
-            if (!res.ok) throw new Error('Header not found');
-            return res.text();
-        })
-        .then(data => {
-            document.getElementById('header-placeholder').innerHTML = data;
-        })
-        .catch(err => console.error('Error:', err));
+    // Determine the root path dynamically
+    const rootPath = window.location.origin;
 
-    fetch('/footer.html')
-        .then(res => {
-            if (!res.ok) throw new Error('Footer not found');
-            return res.text();
-        })
-        .then(data => {
-            document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(err => console.error('Error:', err));
+    // Use absolute paths
+    const loadComponent = (id, file) => {
+        fetch(`${rootPath}/${file}`)
+            .then(res => {
+                if (!res.ok) throw new Error(`${file} failed: ${res.status}`);
+                return res.text();
+            })
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            })
+            .catch(err => console.error(err));
+    };
+
+    loadComponent('header-placeholder', 'header.html');
+    loadComponent('footer-placeholder', 'footer.html');
 });
