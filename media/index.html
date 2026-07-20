@@ -63,30 +63,45 @@
         <!-- TWO COLUMN ROW: YouTube Sermon Stream + RightNow Media Banner -->
         <div class="media-split-row" style="margin-bottom: 50px;">
             
-            <!-- Left Column: Video Sermons Panel -->
-            <div class="media-panel sermons-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
-                <div>
-                    <span class="panel-badge">YouTube Sync</span>
-                    <h3>Recent Video Messages</h3>
-                    <p>Stream our latest live worship gatherings and series directly from our digital collection.</p>
-                    
-                    <!-- Direct Video Play Trigger Link (Using your exact repository image layout) -->
-                    <a href="https://www.youtube.com/watch?v=E2rM6r49jTg" target="_blank" style="display: block; position: relative; background: #000; padding-top: 56.25%; border-radius: 6px; overflow: hidden; margin: 20px 0; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url('../assets/My Walk (2).JPG') no-repeat center center/cover; display: flex; align-items: center; justify-content: center;">
-                            <div style="background: rgba(37, 99, 235, 0.9); width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff;">▶</div>
-                        </div>
-                    </a>
-                    
-                    <h4 style="margin: 0 0 5px 0; color: var(--primary-blue); font-size: 1.2rem; font-weight: 700;">Obedience in Motion</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px;">James 1:21-25 • Sunday Morning Stream</p>
+           <!-- Left Column: Video Sermons Panel -->
+        <div class="media-panel sermons-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
+    <div>
+        <span class="panel-badge">YouTube Sync</span>
+        <h3>Recent Video Messages</h3>
+        <p>Stream our latest live worship gatherings and series directly from our digital collection.</p>
+
+        <!-- Dynamic Sermon Video -->
+        <a id="sermon-link" href="#" target="_blank" style="display:block; position:relative; background:#000; padding-top:56.25%; border-radius:6px; overflow:hidden; margin:20px 0;">
+            <div id="sermon-thumbnail" style="position:absolute; top:0; left:0; width:100%; height:100%; background:linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)); background-size:cover; background-position:center; display:flex; align-items:center; justify-content:center;">
+                <div style="background:rgba(37,99,235,0.9); width:55px; height:55px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.4rem; color:#fff;">
+                    ▶
                 </div>
-                
-                <!-- Fixed Button Container Row (Properly closed tags) -->
-                <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e2e8f0; padding-top: 15px; margin-top: 15px;">
-                    <span style="font-size: 0.85rem; color: #94a3b8;">📅 Jul 05, 2026</span>
-                    <a href="https://www.youtube.com/@LivingWatersCommunityChurch/videos" target="_blank" class="btn-media-action" style="margin: 0; background: #2563eb; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 4px; font-weight: 600; font-size: 0.9rem;">View Full Sermon Archive &rarr;</a>
-                </div>
-            </div> <!-- Closed Left Column Container -->
+            </div>
+        </a>
+
+        <!-- Dynamic Sermon Information -->
+        <h4 id="sermon-title" style="margin:0 0 5px 0; color:var(--primary-blue); font-size:1.2rem; font-weight:700;">
+            Loading latest sermon...
+        </h4>
+        <p id="sermon-speaker" style="font-size:0.9rem; color:var(--text-muted); margin-bottom:5px;">
+            Loading speaker...
+        </p>
+        <p id="sermon-scripture" style="font-size:0.85rem; color:var(--text-muted); margin-bottom:15px;">
+            Loading scripture...
+        </p>
+
+        <!-- Bottom Action Row -->
+        <div style="display:flex; justify-content:space-between; align-items:center; border-top:1px solid #e2e8f0; padding-top:15px; margin-top:15px;">
+            <span id="sermon-date" style="font-size:0.85rem; color:#94a3b8;">
+                📅 Loading date...
+            </span>
+            <a href="https://www.youtube.com/@LivingWatersCommunityChurch/videos" target="_blank" class="btn-media-action" style="margin:0; background:#2563eb; color:#ffffff; text-decoration:none; padding:10px 20px; border-radius:4px; font-weight:600; font-size:0.9rem;">
+                View Full Sermon Archive &rarr;
+            </a>
+        </div>
+    </div>
+</div>
+<!-- Closed Left Column Container -->
 
             <!-- Right Column: RightNow Media Partnership -->
             <div class="media-panel rightnow-panel" style="display: flex; flex-direction: column; justify-content: space-between;">
