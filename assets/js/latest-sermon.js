@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    fetch("data/latest-sermon.json")
+        fetch("/church-website/data/latest-sermon.json")
         .then(response => response.json())
         .then(sermon => {
 
