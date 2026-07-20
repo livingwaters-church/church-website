@@ -1,0 +1,44 @@
+name: Update Latest Sermon
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "0 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  update-sermon:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: npm install axios
+
+      - name: Update Sermon JSON
+        env:
+          YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          CHANNEL_ID: UC0EqfrAc5-Om4Jcu8V6X0Kw
+        run: node scripts/update-sermon.js
+
+      - name: Commit Changes
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add data/latest-sermon.json
+
+          git diff --cached --quiet || (
+            git commit -m "Update latest sermon"
+            git push
+          )
