@@ -1080,7 +1080,7 @@ html {
     overflow-x:hidden;
     scroll-behavior:smooth;
     width:100%;
-    padding:25px 10px;
+    padding:35px 10px;
 }
 
 
@@ -1096,7 +1096,8 @@ html {
 
     transition:
         transform .35s ease,
-        box-shadow .35s ease;
+        box-shadow .35s ease,
+        filter .35s ease;
 
     cursor:pointer;
 }
@@ -1104,9 +1105,11 @@ html {
 
 /* HOVER ZOOM */
 .mission-gallery-scroll img:hover {
-    transform:scale(1.12);
-    box-shadow:0 12px 30px rgba(0,0,0,.35);
-    position:relative;
+    transform:scale(1.08)
+    translateY(-8px);
+    box-shadow:0 18px 35px rgba(0,0,0,.35);
+    filter: brightness(1.08)
+    contrast(1.05);
     z-index:10;
 }
 
