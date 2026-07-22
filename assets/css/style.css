@@ -976,12 +976,6 @@ html {
     margin-bottom: 15px;
 }
 
-
-/* ==========================================================================
-   ANNOUNCEMENT TICKER & GRAPHICAL SLIDESHOW LOOPS
-   ========================================================================== */
-
-/* 1. Infinite Text Ticker Styles */
 /* ==========================================================================
    12. ANNOUNCEMENT SYSTEM UTILITIES (INFINITE NO-GAP LOOPS)
    ========================================================================== */
@@ -1085,6 +1079,66 @@ html {
 
 .mission-gallery img:hover {
     transform:scale(1.03);
+}
+
+/* Suttons Mission Horizontal Gallery */
+
+.gallery-wrapper {
+    position:relative;
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+}
+
+
+.mission-gallery-scroll {
+    display:flex;
+    gap:20px;
+    overflow-x:hidden;
+    scroll-behavior:smooth;
+    width:100%;
+}
+
+
+.mission-gallery-scroll img {
+    flex:0 0 260px;
+    height:190px;
+    object-fit:cover;
+    border-radius:12px;
+    box-shadow:0 6px 18px rgba(0,0,0,.18);
+}
+
+
+.gallery-arrow {
+    position:absolute;
+    z-index:2;
+    width:45px;
+    height:45px;
+    border:none;
+    border-radius:50%;
+    background:var(--primary-blue);
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+
+.gallery-arrow.left {
+    left:-20px;
+}
+
+
+.gallery-arrow.right {
+    right:-20px;
+}
+
+
+.gallery-arrow:hover {
+    background:var(--accent-blue);
 }
 
 /* 3. Layout Sync Utilities */
