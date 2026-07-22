@@ -1091,15 +1091,13 @@ html {
     align-items:center;
 }
 
-
 .mission-gallery-scroll {
-    display:flex;
-    gap:20px;
     overflow-x:hidden;
-    scroll-behavior:smooth;
-    width:100%;
+    overflow-y:visible;
+    padding:20px 0;
 }
 
+/* Suttons Mission Gallery Images */
 
 .mission-gallery-scroll img {
     flex:0 0 260px;
@@ -1107,6 +1105,23 @@ html {
     object-fit:cover;
     border-radius:12px;
     box-shadow:0 6px 18px rgba(0,0,0,.18);
+    transition:transform .35s ease, box-shadow .35s ease;
+    cursor:pointer;
+}
+
+
+/* Hover enlarge effect */
+
+.mission-gallery-scroll img:hover {
+    transform:scale(1.12);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    z-index:5;
+}
+
+.mission-gallery-scroll img:hover {
+    transform:scale(1.12);
+    filter:brightness(1.08);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
 }
 
 
