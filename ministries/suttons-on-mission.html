@@ -239,6 +239,17 @@
             </div>
             </section>
 
+            <script>
+                function scrollGallery(direction) {             
+                    const gallery = document.getElementById("missionGallery");                
+                    const scrollAmount = 300;                
+                    gallery.scrollBy({
+                        left: direction * scrollAmount,
+                        behavior: "smooth"
+                    });               
+                }
+                </script>
+
             <!-- GLOBAL FOOTER -->
             <div id="global-footer"></div>
     
