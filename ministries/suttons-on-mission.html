@@ -173,7 +173,11 @@
                 <p style="text-align:center; color:var(--text-muted); margin-bottom:30px;">
                     Moments from church planting, outreach, and ministry partnerships in Utah.
                 </p>
-                <div class="mission-gallery">
+                 <div class="gallery-wrapper">
+
+                <button class="gallery-arrow left" onclick="scrollGallery(-1)">&#10094;</button>
+
+                <div class="mission-gallery-scroll" id="missionGallery">
                     <img src="../assets/images/ministries/suttons/suttons-01.JPG"
                          alt="Suttons ministry photo">
                     <img src="../assets/images/ministries/suttons/suttons-02.jpeg"
@@ -231,6 +235,8 @@
                     <img src="../assets/images/ministries/suttons/suttons-29.jpeg"
                          alt="Suttons ministry photo">
                 </div>
+                     <button class="gallery-arrow right" onclick="scrollGallery(1)">&#10095;</button>
+            </div>
             </section>
 
             <!-- GLOBAL FOOTER -->
