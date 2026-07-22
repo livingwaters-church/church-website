@@ -1055,9 +1055,9 @@ html {
     padding: 40px;
 }
 
-/* ==========================================================================
-   SUTTONS MISSION HORIZONTAL PHOTO GALLERY
-   ========================================================================== */
+/* ==========================================================
+   SUTTONS MISSION HORIZONTAL IMAGE CAROUSEL
+   ========================================================== */
 
 .mission-gallery-section {
     width:100%;
@@ -1072,66 +1072,80 @@ html {
     align-items:center;
 }
 
-/* The actual scrolling row */
+/* THE TRACK */
 .mission-gallery-scroll {
-    display:flex;
-    flex-wrap:nowrap;
+    display:flex;                 /* THIS WAS MISSING */
+    flex-wrap:nowrap;             /* Prevents wrapping */
     gap:20px;
-    width:100%;
     overflow-x:hidden;
-    padding:20px 10px;
     scroll-behavior:smooth;
+    width:100%;
+    padding:25px 10px;
 }
 
-/* Each photo */
+
+/* INDIVIDUAL PHOTOS */
 .mission-gallery-scroll img {
-    flex:0 0 260px;
+    flex:0 0 260px;               /* Fixed card width */
     width:260px;
     height:190px;
     object-fit:cover;
+
     border-radius:12px;
     box-shadow:0 6px 18px rgba(0,0,0,.18);
-    transition:transform .35s ease, box-shadow .35s ease;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease;
+
     cursor:pointer;
 }
 
-/* Hover zoom */
+
+/* HOVER ZOOM */
 .mission-gallery-scroll img:hover {
     transform:scale(1.12);
-    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    box-shadow:0 12px 30px rgba(0,0,0,.35);
+    position:relative;
     z-index:10;
 }
 
 
-/* Arrow buttons */
+/* ARROWS */
 .gallery-arrow {
     position:absolute;
-    top:50%;
-    transform:translateY(-50%);
     z-index:20;
+
     width:45px;
     height:45px;
+
     border:none;
     border-radius:50%;
+
     background:var(--primary-blue);
     color:white;
+
     font-size:24px;
     cursor:pointer;
+
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-.gallery-arrow:hover {
-    background:var(--accent-blue);
-}
 
 .gallery-arrow.left {
-    left:-15px;
+    left:-20px;
 }
 
+
 .gallery-arrow.right {
-    right:-15px;
+    right:-20px;
+}
+
+
+.gallery-arrow:hover {
+    background:var(--accent-blue);
 }
 
 /* 3. Layout Sync Utilities */
