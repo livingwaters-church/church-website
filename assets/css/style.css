@@ -1055,6 +1055,30 @@ html {
     padding: 40px;
 }
 
+/* Suttons Support Image */
+
+.suttons-support-image {
+    margin-top: 25px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.suttons-support-image img {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 8px 18px rgba(0,0,0,.18);
+    transition: transform .35s ease, box-shadow .35s ease;
+}
+
+.suttons-support-image img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,.30);
+}
+
 /* ==========================================================
    SUTTONS MISSION HORIZONTAL IMAGE CAROUSEL
    ========================================================== */
