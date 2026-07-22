@@ -1055,8 +1055,10 @@ html {
     padding: 40px;
 }
 
+/* ==========================================================================
+   SUTTONS MISSION HORIZONTAL PHOTO GALLERY
+   ========================================================================== */
 
-/* Suttons Mission Horizontal Gallery */
 .mission-gallery-section {
     width:100%;
     padding:40px 20px;
@@ -1070,16 +1072,21 @@ html {
     align-items:center;
 }
 
+/* The actual scrolling row */
 .mission-gallery-scroll {
+    display:flex;
+    flex-wrap:nowrap;
+    gap:20px;
+    width:100%;
     overflow-x:hidden;
-    overflow-y:visible;
-    padding:20px 0;
+    padding:20px 10px;
+    scroll-behavior:smooth;
 }
 
-/* Suttons Mission Gallery Images */
-
+/* Each photo */
 .mission-gallery-scroll img {
     flex:0 0 260px;
+    width:260px;
     height:190px;
     object-fit:cover;
     border-radius:12px;
@@ -1088,17 +1095,20 @@ html {
     cursor:pointer;
 }
 
-/* Hover enlarge effect */
-
+/* Hover zoom */
 .mission-gallery-scroll img:hover {
     transform:scale(1.12);
-    box-shadow:0 12px 30px rgba(0,0,0,.35);
-    z-index:5;
+    box-shadow:0 15px 35px rgba(0,0,0,.35);
+    z-index:10;
 }
 
+
+/* Arrow buttons */
 .gallery-arrow {
     position:absolute;
-    z-index:2;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:20;
     width:45px;
     height:45px;
     border:none;
@@ -1112,19 +1122,16 @@ html {
     justify-content:center;
 }
 
-
-.gallery-arrow.left {
-    left:-20px;
-}
-
-
-.gallery-arrow.right {
-    right:-20px;
-}
-
-
 .gallery-arrow:hover {
     background:var(--accent-blue);
+}
+
+.gallery-arrow.left {
+    left:-15px;
+}
+
+.gallery-arrow.right {
+    right:-15px;
 }
 
 /* 3. Layout Sync Utilities */
@@ -1144,8 +1151,4 @@ html {
 .video-card-sync:hover {
     transform: translateY(-4px);
 }
-.scroll-container img:hover {
-    transform: scale(1.03);
-    cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+
