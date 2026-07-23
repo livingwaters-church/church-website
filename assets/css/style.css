@@ -1193,3 +1193,15 @@ html {
     transform: translateY(-4px);
 }
 
+.calendar-frame {
+    background: var(--bg-white);
+    padding: 15px;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--card-shadow);
+    border: 1px solid #e2e8f0;
+}
+
+.calendar-frame iframe {
+    border-radius: 10px;
+}
+
